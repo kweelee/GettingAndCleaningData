@@ -61,7 +61,9 @@ We are only interest on the mean and standard deviation for each measurement. We
 the "mean" and "std" for the required values. We will also need the subject and activity associated with the values.
 
 extractedData <- allData[,grepl("Subject|Activity|mean|std|Mean",names(allData))]
+
 numberOfColumns <-ncol(extractedData)
+
 For a second independent tidy data set with the average of each variable for each activity and each subject, we can
 use the aggregate function, and group it by subject and activity.
 
