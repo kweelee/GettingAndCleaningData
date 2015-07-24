@@ -61,11 +61,11 @@ We are only interest on the mean and standard deviation for each measurement. We
 the "mean" and "std" for the required values. We will also need the subject and activity associated with the values.
 
 extractedData <- allData[,grepl("Subject|Activity|mean|std",names(allData))]
-
+numberOfColumns <-ncol(extractedData)
 For a second independent tidy data set with the average of each variable for each activity and each subject, we can
 use the aggregate function, and group it by subject and activity.
 
-p <-aggregate(extractedData[,3:81],by=list(Subject = extractedData$Subject, Activity = extractedData$Activity),mean)
+p <-aggregate(extractedData[,3:numberOfColumns],by=list(Subject = extractedData$Subject, Activity = extractedData$Activity),mean)
 Finally, we export the tidydata to tidydata.txt
 
 write.table(p, file = "tidydata.txt", sep = " ", row.name=FALSE, qmethod = "double")
