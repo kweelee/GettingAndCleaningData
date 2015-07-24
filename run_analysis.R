@@ -74,8 +74,8 @@ allData$Activity[allData$Activity == i] <- as.character(ActivityLabels[[2]][i])
 
 #Extracts only the measurements on the mean and standard deviation for each measurement
 extractedData <- allData[,grepl("Subject|Activity|mean|std",names(allData))]
-
+numberOfColumns <-ncol(extractedData)
 #independent tidy data set with the average of each variable for each activity and each subject.
-p <-aggregate(extractedData[,3:81],by=list(Subject = extractedData$Subject, Activity = extractedData$Activity),mean)
+p <-aggregate(extractedData[,3:numberOfColumns],by=list(Subject = extractedData$Subject, Activity = extractedData$Activity),mean)
 #export the tidydata to tidydata.txt
 write.table(p, file = "tidydata.txt", sep = " ", row.name=FALSE, qmethod = "double")
