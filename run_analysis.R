@@ -31,7 +31,7 @@ if (!file.exists("UCI HAR Dataset")){
 #This script will performed analysis on the data set
 #The test data set is read to testDataX, testDataY and testDatasubject
 testDataX <-read.csv("./UCI HAR Dataset/test/X_test.txt",sep = "",header = FALSE)
-testDataY <-read.csv("./UCI HAR Dataset/test/Y_test.txt",sep = "",header = FALSE)
+testDataY <-read.csv("./UCI HAR Dataset/test/y_test.txt",sep = "",header = FALSE)
 testDatasubject <-read.csv("./UCI HAR Dataset/test/subject_test.txt",sep = "",header = FALSE)
 
 #combined the test dataset
@@ -40,7 +40,7 @@ testData <-cbind(testDatasubject,testDataY,testDataX)
 
 #The train data set is read to trainDataX, trainDataY and trainDatasubject
 trainDataX <-read.csv("./UCI HAR Dataset/train/X_train.txt",sep = "",header = FALSE)
-trainDataY <-read.csv("./UCI HAR Dataset/train/Y_train.txt",sep = "",header = FALSE)
+trainDataY <-read.csv("./UCI HAR Dataset/train/y_train.txt",sep = "",header = FALSE)
 trainDatasubject <-read.csv("./UCI HAR Dataset/train/subject_train.txt",sep = "",header = FALSE)
 
 #combined the train dataset
